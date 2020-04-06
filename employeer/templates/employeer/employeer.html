@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block main %}
+    <div class="container">
+        <div class="container">
+
+            <!-- Button trigger modal -->
+         <a  class="btn btn-primary" href="/add_employeeer">
+            Add New
+         </a>
+            <div class="card">
+               <div class="card-header">
+                 Employee Details
+               </div>
+               <div class="card-body">
+         
+         
+         
+                  <table class="table">
+                     <thead class="thead-light">
+                       <tr>
+                         <th scope="col">#</th>
+                         <th>Image</th>
+                         <th scope="col">First</th>
+                         <th scope="col">Last</th>
+                         <th scope="col">Email</th>
+                         <th scope="col">Action</th>
+                       </tr>
+                     </thead>
+                     <tbody>
+                       {% for employeer in employeers %}
+                       <tr>
+                         <th scope="row">{{employeer.id}}</th>
+                         <td><img src="{% static 'download.jpeg' %}"/></td>
+                         <td>{{employeer.first_name}}</td>
+                         <td>{{employeer.last_name}}</td>
+                         <td>{{employeer.email}}</td>
+                         <td>
+                           <a href="/employeer_update/{{employeer.id}}" class="btn btn-outline-info btn-sm">Update </a>
+                           <a href="/employee_delete/{{employeer.id}}" class="btn btn-outline-danger btn-sm">Delete </a>
+         
+                         </td>
+                       </tr>
+                       {% endfor %}
+         
+         
+                     </tbody>
+                   </table>
+         
+               </div>
+             </div>
+         
+         
+         
+         </div>
+
+
+    </div>
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+
+{% block main %}
+<form action="" method="POST">
+   {% csrf_token %}
+<div >
+   <div class="modal-dialog" role="document">
+     <div class="modal-content">
+       <div class="modal-header">
+         <h5 class="modal-title" id="exampleModalLabel">Add new Employee</h5>
+
+         </button>
+       </div>
+       <div class="modal-body">
+
+         <div class="form-group">
+            <labe a danger alert—check it oul for="first_name">First Name</label>
+            <input type="text" class="form-control" name="first_name"
+            value a danger alert—check it ou="{{person.first_name}}"
+             placeholder="Enter First name">
+          </div>
+          <div class="form-group">
+            <label for="last_name">Last Name</label>
+            <input type="text" class="form-control"
+              value="{{person.last_name}}"
+             name="last_name" placeholder="Enter Last name">
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control"
+            value="{{person.email}}"
+             name="email" placeholder="eg-hello@gmail.com">
+          </div>
+
+
+
+
+       </div>
+       <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Update</button>
+       </div>
+     </div>
+   </div>
+ </div>
+</form>
+
+{% endblock %}
